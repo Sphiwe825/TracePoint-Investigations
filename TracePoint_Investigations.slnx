@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="tracepoint_investigations.client/tracepoint_investigations.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="TracePoint_Investigations.Server/TracePoint_Investigations.Server.csproj" />
+</Solution>
