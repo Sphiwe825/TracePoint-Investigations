@@ -1,6 +1,0 @@
-@TracePoint_Investigations.Server_HostAddress = http://localhost:5257
-
-GET {{TracePoint_Investigations.Server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
