@@ -1,0 +1,2 @@
+.evidence-card button { background: var(--blue-dark); }
+.evidence-card button:hover { background: var(--blue); }

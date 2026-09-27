@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --ink: #10233f;
+  --ink-soft: #52647d;
+  --blue: #1f5fae;
+  --blue-dark: #153d70;
+  --blue-pale: #eef4fb;
+  --amber: #c88719;
+  --paper: #ffffff;
+  --line: #dbe6f3;
+  --success: #17805a;
+  --shadow: 0 14px 34px rgba(16, 35, 63, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(31, 95, 174, 0.18), transparent 28%),
+    linear-gradient(180deg, #eef4fb 0%, #f7f9fc 18%, #f5f7fa 100%);
+  color: var(--ink);
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 10;
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue), var(--amber));
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(245, 165, 36, .55);
+  outline-offset: 3px;
+}
+
+.page-shell {
+  width: min(1240px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 42px 24px 76px;
+}
+
+.site-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 28px;
+  padding: 6px;
+  border: 1px solid rgba(18, 43, 71, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(16, 35, 63, .07);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  color: var(--ink-soft);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: .18s ease;
+}
+
+.nav-link:hover {
+  color: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, var(--ink), var(--blue-dark));
+  color: white;
+  box-shadow: 0 10px 20px rgba(16, 35, 63, .2);
+}
+
+.content-panel {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid rgba(18, 43, 71, 0.08);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 248, 252, 0.96));
+  box-shadow: 0 16px 40px rgba(16, 35, 63, .08);
+}
+
+.content-panel h1,
+.content-panel h2,
+.content-panel h3,
+.content-panel h4,
+.hero-copy h1,
+.hero-copy h2 {
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  line-height: 1.12;
+}
+
+.content-panel h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  letter-spacing: -.04em;
+}
+
+.content-panel p {
+  color: var(--ink-soft);
+}
+
+.action-row,
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.action-row a,
+.primary-action,
+.secondary-action,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .18s ease;
+}
+
+.action-row a {
+  border-color: rgba(18, 43, 71, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--blue-dark);
+}
+
+.action-row a:hover,
+button:hover,
+.primary-action:hover,
+.secondary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(16, 35, 63, .14);
+}
+
+.case-card,
+.suspect-card,
+.evidence-card,
+.selected-suspect-box,
+.selected-evidence-box,
+.suspect-choice-box,
+.success-panel,
+.investigation-form {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff, #fafcff);
+  box-shadow: 0 10px 22px rgba(16, 35, 63, .04);
+}
+
+.case-card h2,
+.suspect-card h3,
+.evidence-card h3 {
+  margin-bottom: 8px;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+}
+
+.suspect-layout,
+.evidence-layout,
+.investigation-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.suspect-list,
+.evidence-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.suspect-card,
+.evidence-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 0;
+  border-top: 4px solid var(--blue);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.suspect-card:hover,
+.evidence-card:hover,
+.feature-card:hover,
+.timeline-step:hover,
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(16, 35, 63, .08);
+}
+
+.suspect-card:nth-child(2n),
+.evidence-card:nth-child(2n) {
+  border-top-color: rgba(18, 43, 71, 0.24);
+}
+
+.suspect-card button,
+.evidence-card button,
+.submit-button {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: linear-gradient(135deg, var(--ink), var(--blue-dark));
+  color: white;
+}
+
+.suspect-card button:hover,
+.evidence-card button:hover,
+.submit-button:hover {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+}
+
+.selected-suspect-box,
+.selected-evidence-box,
+.suspect-choice-box {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-left: 4px solid var(--amber);
+  background: linear-gradient(180deg, #fffdf7, #fffaf0);
+}
+
+.investigation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(180deg, #fbfdff, #f4f8ff);
+}
+
+.investigation-form label {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.investigation-form input,
+.investigation-form textarea,
+.investigation-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfddec;
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.investigation-form input:focus,
+.investigation-form textarea:focus,
+.investigation-form select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(31, 95, 174, 0.12);
+}
+
+.investigation-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.success-panel {
+  border-color: rgba(23, 128, 90, .25);
+  background: #effaf5;
+}
+
+.success-panel h2 {
+  margin-bottom: 8px;
+  color: var(--success);
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    padding: 30px 14px 48px;
+  }
+
+  .content-panel {
+    padding: 24px 18px;
+  }
+
+  .site-navigation {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .nav-link {
+    flex: 1 1 30%;
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: .67rem;
+  }
+
+  .suspect-list,
+  .evidence-list {
+    grid-template-columns: 1fr;
+  }
+}

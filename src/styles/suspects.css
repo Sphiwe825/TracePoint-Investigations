@@ -1,0 +1,110 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--blue-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-intro {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.suspects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.suspects-manager {
+  border-top: 4px solid var(--blue);
+}
+
+.suspect-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid var(--blue);
+}
+
+.suspect-avatar {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.suspect-name {
+  margin: 0;
+}
+
+.suspect-role {
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.suspect-description {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.suspect-card .suspect-header h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.3rem;
+}
+
+.detail-label {
+  margin-bottom: 0.5rem;
+  color: var(--blue-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.selected-suspect-box {
+  border-left: 4px solid var(--blue);
+  background: linear-gradient(180deg, rgba(238, 244, 251, 0.8), rgba(255, 255, 255, 0.9));
+}
+
+.selected-suspect-box h3 {
+  margin-bottom: 0.4rem;
+}
+
+.suspect-card button,
+.selected-suspect-box button,
+.action-row button {
+  background: linear-gradient(135deg, var(--ink), var(--blue-dark));
+  color: white;
+}
+
+.suspect-card button:hover,
+.selected-suspect-box button:hover,
+.action-row button:hover {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+}
