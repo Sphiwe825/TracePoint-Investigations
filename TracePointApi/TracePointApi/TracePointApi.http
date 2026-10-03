@@ -1,6 +1,16 @@
 @TracePointApi_HostAddress = http://localhost:5245
 
-GET {{TracePointApi_HostAddress}}/weatherforecast/
+GET {{TracePointApi_HostAddress}}/api/case
+Accept: application/json
+
+###
+
+GET {{TracePointApi_HostAddress}}/api/case/1
+Accept: application/json
+
+###
+
+GET {{TracePointApi_HostAddress}}/api/suspect
 Accept: application/json
 
 ###

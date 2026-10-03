@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/pages/" />
+  <Folder Name="/src/pages/TracePointApi/">
+    <Project Path="src/pages/TracePointApi/TracePointApi/TracePointApi.csproj" />
+  </Folder>
   <Project Path="tracepoint_investigations.client/tracepoint_investigations.client.esproj">
     <Build />
     <Deploy />
