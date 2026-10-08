@@ -4,7 +4,7 @@ Planetary Devastation
 2) Masise Mike Sebela 202500518
 3) Nonsindisho Buthelezi 202579105
 4) Mashabela Letago 202551097
-5) Sikila Ntsika 202349740
+5) Sikali Ntsika 202349740
 6) Amukelani Ndodakayise Rikhotso 202212514
 
 ## Application Description
