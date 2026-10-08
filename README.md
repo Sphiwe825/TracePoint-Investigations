@@ -5,10 +5,10 @@ Planetary Devastation
 3) Nonsindisho Buthelezi 202579105
 4) Mashabela Letago 202551097
 5) Sikila Ntsika 202349740
-6) Amukelani Rikhotso
+6) Amukelani Ndodakayise Rikhotso 202212514
 
 ## Application Description
-TracePoint Investigations is a full-stack digital investigation system built for the fictional case, "The Missing Prototype." The application allows an investigator to review the case details, inspect suspects and evidence, examine individual pieces of evidence, select a suspect, record an investigation conclusion, submit the investigation, and confirm that the investigation has been successfully stored.
+TracePoint Investigations is a full-stack digital investigation system built for the fictional case, "The Missing Prototype." The application requires an investigator to log in before accessing the case workflow, then allows them to review the case details, inspect suspects and evidence, examine individual pieces of evidence, select a suspect, record an investigation conclusion, submit the investigation, and confirm that the investigation has been successfully stored.
 
 This project follows the assignment specification for NWED622 – Web Development II and uses a layered architecture consisting of:
 - React frontend for the user interface
@@ -73,13 +73,14 @@ CREATE TABLE users (
 ```
 ## Project Overview
 The system demonstrates a realistic investigation workflow in which an investigator:
-1. Opens the application and views the case summary.
-2. Reviews suspects and evidence.
-3. Examines evidence in detail.
-4. Selects the most likely suspect.
-5. Enters an investigation conclusion.
-6. Submits the investigation.
-7. Confirms the record was stored successfully.
+1. Opens the application and logs in with an investigator account.
+2. Views the case summary after authentication.
+3. Reviews suspects and evidence.
+4. Examines evidence in detail.
+5. Selects the most likely suspect.
+6. Enters an investigation conclusion.
+7. Submits the investigation.
+8. Confirms the record was stored successfully.
 
 ## API Endpoints
 The API is designed to support the assignment requirements using attribute-based routing.
@@ -200,6 +201,8 @@ npm test -- --run
 ## Demonstration Expectations
 During the demonstration, the student must be able to:
 - Start the API and React app
+- Log in to the system using a valid investigator account
+- Show the protected case flow after login
 - Display the case, suspects, and evidence
 - Examine evidence details
 - Select a suspect and submit an investigation
@@ -209,3 +212,57 @@ During the demonstration, the student must be able to:
 - Explain the use of Entity Framework Core
 - Explain the Dapper implementation
 - Demonstrate at least one test
+
+## Demonstration Walkthrough
+
+### 1. Prepare the database and start the applications
+1. Confirm MySQL is running, the `tradepoint` database and required tables exist, and the case, suspects, and evidence have been seeded.
+2. Check that `TracePointApi/TracePointApi/appsettings.json` has a working local MySQL connection string. Keep database passwords private during the presentation.
+3. In a terminal, start the API from `TracePointApi/TracePointApi`:
+   ```bash
+   dotnet run
+   ```
+   Leave this terminal open and note the API URL printed in the output.
+4. In a second terminal at the repository root, start React:
+   ```bash
+   npm run dev
+   ```
+5. Open the local Vite URL printed by the command. Keep both applications running during the demonstration.
+
+### 2. Demonstrate login and protected access
+1. If you do not already have an investigator account, choose **Signup**, enter a username, email, and password, then create the account. Signup signs the new account in.
+2. Choose **Logout**, then choose **Login** and enter that account's email and password. This demonstrates the login form and API call.
+3. To show that the investigation pages require a signed-in user, log out and open the **Case** page (or visit `/case`). Confirm that the app redirects to **Login**.
+4. Sign in again. The app should return to the protected page you requested.
+
+### 3. Walk through the investigation
+1. Open **Case** and point out the case name, description, and status.
+2. Open **Suspects** and review the listed people and their details. Select a suspect, then choose **Select Suspect** to carry that selection to the investigation form.
+3. Open **Evidence**, select an evidence item, and show its title, location, and description.
+4. Open **Investigation**. Confirm the selected suspect, enter a concise conclusion based on the case evidence, and submit it.
+5. Point out the success message confirming that the investigation was submitted.
+
+### 4. Verify the saved investigation
+Use MySQL Workbench or another SQL client connected to `tradepoint` and run:
+```sql
+SELECT i.investigationId, i.caseId, s.name AS suspectName,
+       i.conclusion, i.dateStarted
+FROM investigations AS i
+JOIN suspect AS s ON s.suspectId = i.suspectId
+ORDER BY i.investigationId DESC
+LIMIT 5;
+```
+Show that the newest row contains the suspect and conclusion submitted through the app.
+
+### 5. Explain the implementation
+- **React state and props:** Use the investigation form as an example. `InvestigationPage` stores the selected suspect and submission feedback in state, then passes the selected suspect and submit handler to `InvestigationForm` as props.
+- **A React component:** Explain that `InvestigationForm` displays the conclusion form, validates the input, and calls the provided submit handler.
+- **Dapper:** The API controllers open MySQL connections with `MySqlConnection` and use Dapper methods such as `QueryAsync` and `ExecuteScalarAsync` to run parameterized SQL and map results. For example, the investigation POST endpoint inserts the submitted case, suspect, and conclusion.
+- **Entity Framework Core:** Do not claim that the current API uses EF Core for its database operations. Although the project has a `DatabaseContext` class and lists EF Core as a technology, the current controllers use Dapper and direct MySQL connections; the context is not configured with entities or registered in `Program.cs`. If asked, describe EF Core as a listed dependency / intended part of the architecture, and distinguish it from the database access currently implemented.
+
+### 6. Demonstrate a frontend test
+1. From the repository root, run:
+   ```bash
+   npm test -- --run
+   ```
+2. Show the Vitest output and briefly explain one passing test, such as the test that submits login credentials and stores the returned user.
