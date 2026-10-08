@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import Navigation from '../components/Navigation'
-import { loginUser, storeUserSession } from '../services/authServiceApi'
+import { signupUser, storeUserSession } from '../services/authServiceApi'
 
-function Login() {
+function Signup() {
   const navigate = useNavigate()
-  const location = useLocation()
-  const [form, setForm] = useState({ email: '', password: '' })
+  const [form, setForm] = useState({ username: '', email: '', password: '' })
   const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (event) => {
@@ -18,16 +18,23 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     setError('')
+    setSuccess('')
 
-    if (!form.email.trim() || !form.password.trim()) {
-      setError('Email and password are both required.')
+    if (!form.username.trim() || !form.email.trim() || !form.password.trim()) {
+      setError('Username, email, and password are required.')
+      return
+    }
+
+    if (form.password.length < 6) {
+      setError('Password must be at least 6 characters long.')
       return
     }
 
     setIsSubmitting(true)
 
     try {
-      const result = await loginUser({
+      const result = await signupUser({
+        username: form.username.trim(),
         email: form.email.trim(),
         password: form.password
       })
@@ -39,9 +46,12 @@ function Login() {
         token: result.token
       })
 
-      navigate(location.state?.from?.pathname || '/', { replace: true })
+      setSuccess('Account created successfully. Redirecting to home...')
+      setTimeout(() => {
+        navigate('/')
+      }, 500)
     } catch (submitError) {
-      setError(submitError.message || 'Login was unsuccessful.')
+      setError(submitError.message || 'Signup could not be completed.')
     } finally {
       setIsSubmitting(false)
     }
@@ -53,11 +63,22 @@ function Login() {
 
       <section className="content-panel auth-panel">
         <div className="auth-header">
-          <p className="eyebrow">Access portal</p>
-          <h1>Login</h1>
+          <p className="eyebrow">New investigator</p>
+          <h1>Signup</h1>
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
+          <label>
+            Username
+            <input
+              type="text"
+              name="username"
+              value={form.username}
+              onChange={handleChange}
+              placeholder="Choose a username"
+            />
+          </label>
+
           <label>
             Email
             <input
@@ -76,23 +97,24 @@ function Login() {
               name="password"
               value={form.password}
               onChange={handleChange}
-              placeholder="Enter password"
+              placeholder="Create password"
             />
           </label>
 
           {error && <p className="auth-message error">{error}</p>}
+          {success && <p className="auth-message success">{success}</p>}
 
           <button className="submit-button" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Logging in...' : 'Login'}
+            {isSubmitting ? 'Creating account...' : 'Create account'}
           </button>
         </form>
 
         <p className="auth-switch">
-          Need an account? <Link to="/signup">Create one</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </section>
     </main>
   )
 }
 
-export default Login
+export default Signup

@@ -29,3 +29,11 @@ create table investigations(
 	conclusion varchar(255),
 	datestarted datetime default current_timestamp
 );
+
+CREATE TABLE users (
+    userId INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    passwordHash VARCHAR(255) NOT NULL,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);

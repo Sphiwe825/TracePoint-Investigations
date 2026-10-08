@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\controllers\\casecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\controllers\\casecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\tracepointapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\tracepointapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|c:\\users\\admin\\source\\repos\\tracepointapi\\tracepointapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7B0044C6-5F39-15E7-AC24-DDFC6DFF072F}|TracePointApi\\TracePointApi.csproj|solutionrelative:tracepointapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,7 +42,45 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "TracePointApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "TracePointApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwOwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T10:13:46.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\models\\User.cs",
+              "RelativeDocumentMoniker": "TracePointApi\\models\\User.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\models\\User.cs",
+              "RelativeToolTip": "TracePointApi\\models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T10:12:20.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TracePointApi.http",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\TracePointApi.http",
+              "RelativeDocumentMoniker": "TracePointApi\\TracePointApi.http",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\TracePointApi.http",
+              "RelativeToolTip": "TracePointApi\\TracePointApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-10-05T08:45:57.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\appsettings.json",
               "RelativeDocumentMoniker": "TracePointApi\\appsettings.json",
@@ -38,25 +88,24 @@
               "RelativeToolTip": "TracePointApi\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-18T19:22:01.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-18T19:22:01.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CaseController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\Controllers\\CaseController.cs",
               "RelativeDocumentMoniker": "TracePointApi\\Controllers\\CaseController.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\Controllers\\CaseController.cs",
               "RelativeToolTip": "TracePointApi\\Controllers\\CaseController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwCcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-18T19:14:10.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\TracePointApi\\TracePointApi\\Program.cs",
               "RelativeDocumentMoniker": "TracePointApi\\Program.cs",
@@ -64,8 +113,7 @@
               "RelativeToolTip": "TracePointApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T20:36:39.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-13T20:36:39.18Z"
             }
           ]
         }
